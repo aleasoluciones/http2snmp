@@ -40,5 +40,6 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		rootHandler(querier, w, r)
 	})
+	log.Println("Server running in 'http://0.0.0.0:8080' ...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
