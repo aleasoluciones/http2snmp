@@ -18,7 +18,6 @@ const (
 )
 
 func rootHandler(querier gosnmpquerier.SyncQuerier, w http.ResponseWriter, r *http.Request) {
-
 	cmd, _ := gosnmpquerier.ConvertCommand(r.FormValue("cmd"))
 	query := gosnmpquerier.Query{
 		Cmd:         cmd,
@@ -44,6 +43,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		rootHandler(querier, w, r)
 	})
-	log.Println("Server running in 'http://0.0.0.0:8080' ...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	address := "0.0.0.0:8080"
+	log.Println("Server running in", address, " ...")
+	log.Fatal(http.ListenAndServe(address, nil))
 }
