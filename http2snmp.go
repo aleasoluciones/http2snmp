@@ -5,16 +5,13 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/aleasoluciones/gosnmpquerier"
-)
-
-const (
-	CONTENTION = 4
 )
 
 func rootHandler(querier gosnmpquerier.SyncQuerier, w http.ResponseWriter, r *http.Request) {
@@ -33,17 +30,25 @@ func rootHandler(querier gosnmpquerier.SyncQuerier, w http.ResponseWriter, r *ht
 		fmt.Fprint(w, err)
 	}
 	fmt.Fprint(w, jsonProcessed)
-
 }
 
 func main() {
+	address := flag.String("address", "0.0.0.0", "listen address")
+	port := flag.String("port", "8080", "listen port")
+	contention := flag.Int("contention", 4, "max concurrent queries per destination")
+	circuitBreakErrors := flag.Int("maxerrors", 4, "consecutive errors to mark destination as faulty")
+	circuitResetSeconds := flag.Int("resettime", 30, "time reset faulty state for a destination (seconds)")
+	flag.Parse()
 
-	querier := gosnmpquerier.NewSyncQuerier(CONTENTION, 3, 3*time.Second)
+	querier := gosnmpquerier.NewSyncQuerier(
+		*contention,
+		*circuitBreakErrors,
+		time.Duration(*circuitResetSeconds)*time.Second)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		rootHandler(querier, w, r)
 	})
-	address := "0.0.0.0:8080"
-	log.Println("Server running in", address, " ...")
-	log.Fatal(http.ListenAndServe(address, nil))
+	addressAndPort := fmt.Sprintf("%s:%s", *address, *port)
+	log.Println("Server running in", addressAndPort, " ...")
+	log.Fatal(http.ListenAndServe(addressAndPort, nil))
 }
