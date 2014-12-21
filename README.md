@@ -1,5 +1,4 @@
-http2snmp
-=========
+#http2snmp
 Scalable snmp querier with a http interface. 
 It enable to send snmp (get, getnext, walk) queries to devices using http.
 
@@ -14,12 +13,22 @@ Usage of http2snmp:
   -resettime=30: time reset faulty state for a destination (seconds)
 ```
 
-
-Get example
-===========
+##Get example
 ```
 curl 'http://localhost:8080/?cmd=get&destination=127.0.0.1&community=public&oid=1.3.6.1.2.1.1.1.0'
 ```
+
+##Build Docker Container
+Build the container using the name http2snmp
+```
+docker build -t http2snmp .
+```
+
+##Run http2snmp as a Docker Container
+```
+docker run -p 80:8080 --rm http2snmp /go/src/app/http2snmp
+```
+
 
 ##License
 (The MIT License)
