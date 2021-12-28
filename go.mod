@@ -1,4 +1,4 @@
-module http2snmp
+module github.com/aleasoluciones/http2snmp
 
 go 1.17
 

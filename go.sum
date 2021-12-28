@@ -1,7 +1,5 @@
 github.com/aleasoluciones/goaleasoluciones v0.0.0-20211227130338-20ca5ca184b9 h1:xXj8ssHt+P9CbADgXF2QEifFxidilxgDFZiQiM6yaqo=
 github.com/aleasoluciones/goaleasoluciones v0.0.0-20211227130338-20ca5ca184b9/go.mod h1:MPL+6NA5qz50Fde34ZZrVoENgJwhVJ8NR/MILU6x8tw=
-github.com/aleasoluciones/gosnmpquerier v0.0.0-20211105093119-154d80ae3ab3 h1:oE8APg/c/N5zoUlgc2qTBTwk9gWlCxUKwmgeF1LWTCQ=
-github.com/aleasoluciones/gosnmpquerier v0.0.0-20211105093119-154d80ae3ab3/go.mod h1:UAyt3+5oUrjn/x3W1YJT7259PP6NFGokAm1h5h5B9NE=
 github.com/aleasoluciones/gosnmpquerier v0.0.0-20211228071505-d0a2fd7b956e h1:Ja4frb8alRKdEzQEBakVo+bgBjN4pUmuuhHbgE9KMDE=
 github.com/aleasoluciones/gosnmpquerier v0.0.0-20211228071505-d0a2fd7b956e/go.mod h1:LoJhKckBs7L8Iu5CL2mfPXWwTF3lHYINtfzKFLGhq2w=
 github.com/certifi/gocertifi v0.0.0-20170417193930-a9c833d2837d/go.mod h1:GJKEexRPVJrBSOjoqN5VNOIKJ5Q3RViH6eu3puDRwx4=
@@ -42,6 +40,7 @@ github.com/onsi/gomega v1.17.0/go.mod h1:HnhC7FXeEQY45zxNK3PPoIUhzk/80Xly9PcubAl
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/streadway/amqp v1.0.0/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
