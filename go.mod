@@ -2,9 +2,9 @@ module github.com/aleasoluciones/http2snmp
 
 go 1.17
 
-require github.com/aleasoluciones/gosnmpquerier v0.0.0-20211228071505-d0a2fd7b956e
+require github.com/aleasoluciones/gosnmpquerier v0.0.0-20220218071527-82e2f67db917
 
 require (
-	github.com/aleasoluciones/goaleasoluciones v0.0.0-20211227130338-20ca5ca184b9 // indirect
+	github.com/aleasoluciones/goaleasoluciones v0.0.0-20220218070719-a99a7ffe0d1b // indirect
 	github.com/gosnmp/gosnmp v1.34.0 // indirect
 )
